@@ -156,10 +156,6 @@
             android:title="@string/pref_profile_title_location_background_throttle_proximity_alert_interval_ms"
             android:summary="@string/pref_profile_summary_location_background_throttle_proximity_alert_interval_ms" />
         <EditTextPreference
-            android:key="@string/pref_profile_key_location_global_kill_switch"
-            android:title="@string/pref_profile_title_location_global_kill_switch"
-            android:summary="@string/pref_profile_summary_location_global_kill_switch" />
-        <EditTextPreference
             android:key="@string/pref_profile_key_location_access_check_interval_millis"
             android:title="@string/pref_profile_title_location_access_check_interval_millis"
             android:summary="@string/pref_profile_summary_location_access_check_interval_millis" />

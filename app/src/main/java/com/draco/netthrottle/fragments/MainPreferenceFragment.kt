@@ -55,7 +55,6 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
     private lateinit var locationBackgroundThrottleIntervalMs: EditTextPreference
     private lateinit var locationBackgroundThrottleProximityAlertIntervalMs: EditTextPreference
-    private lateinit var locationGlobalKillSwitch: EditTextPreference
     private lateinit var locationAccessCheckIntervalMillis: EditTextPreference
     private lateinit var locationAccessCheckDelayMillis: EditTextPreference
 
@@ -108,7 +107,6 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
         locationBackgroundThrottleIntervalMs = findPreference(getString(R.string.pref_profile_key_location_background_throttle_interval_ms))!!
         locationBackgroundThrottleProximityAlertIntervalMs = findPreference(getString(R.string.pref_profile_key_location_background_throttle_proximity_alert_interval_ms))!!
-        locationGlobalKillSwitch = findPreference(getString(R.string.pref_profile_key_location_global_kill_switch))!!
         locationAccessCheckIntervalMillis = findPreference(getString(R.string.pref_profile_key_location_access_check_interval_millis))!!
         locationAccessCheckDelayMillis = findPreference(getString(R.string.pref_profile_key_location_access_check_delay_millis))!!
 
@@ -236,7 +234,6 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
         refreshSettingViaConstant(locationBackgroundThrottleIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS, SettingsNamespaces.GLOBAL)
         refreshSettingViaConstant(locationBackgroundThrottleProximityAlertIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS, SettingsNamespaces.GLOBAL)
-        refreshSettingViaConstant(locationGlobalKillSwitch, SettingsConstants.Global.LOCATION_GLOBAL_KILL_SWITCH, SettingsNamespaces.GLOBAL)
         refreshSettingViaConstant(locationAccessCheckIntervalMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_INTERVAL_MILLIS, SettingsNamespaces.SECURE)
         refreshSettingViaConstant(locationAccessCheckDelayMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_DELAY_MILLIS, SettingsNamespaces.SECURE)
 
@@ -287,7 +284,6 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
         applySettingViaConstant(locationBackgroundThrottleIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS, SettingsNamespaces.GLOBAL)
         applySettingViaConstant(locationBackgroundThrottleProximityAlertIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS, SettingsNamespaces.GLOBAL)
-        applySettingViaConstant(locationGlobalKillSwitch, SettingsConstants.Global.LOCATION_GLOBAL_KILL_SWITCH, SettingsNamespaces.GLOBAL)
         applySettingViaConstant(locationAccessCheckIntervalMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_INTERVAL_MILLIS, SettingsNamespaces.SECURE)
         applySettingViaConstant(locationAccessCheckDelayMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_DELAY_MILLIS, SettingsNamespaces.SECURE)
 

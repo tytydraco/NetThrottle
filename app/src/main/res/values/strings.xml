@@ -176,10 +176,6 @@
     <string name="pref_profile_title_network_access_timeout_ms">Network Access Timeout</string>
     <string name="pref_profile_summary_network_access_timeout_ms">Maximum timeout in milliseconds than apps can be blocked for while waiting for network rules to be updated</string>
 
-    <string name="pref_profile_key_location_global_kill_switch">location_global_kill_switch</string>
-    <string name="pref_profile_title_location_global_kill_switch">Location Global Kill-Switch</string>
-    <string name="pref_profile_summary_location_global_kill_switch">Disable all location access for all users and all apps</string>
-
     <string name="pref_profile_key_location_access_check_interval_millis">location_access_check_interval_millis</string>
     <string name="pref_profile_title_location_access_check_interval_millis">Location Access Check Interval</string>
     <string name="pref_profile_summary_location_access_check_interval_millis">Interval in milliseconds to check for location access</string>

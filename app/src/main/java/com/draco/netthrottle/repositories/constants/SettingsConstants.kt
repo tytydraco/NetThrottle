@@ -42,7 +42,6 @@ object SettingsConstants {
 
         const val LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS =        "location_background_throttle_interval_ms"
         const val LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS =    "location_background_throttle_proximity_alert_interval_ms"
-        const val LOCATION_GLOBAL_KILL_SWITCH =                     "location_global_kill_switch"
 
         const val ENABLE_RADIO_BUG_DETECTION =                      "enable_radio_bug_detection"
     }
