@@ -3,6 +3,7 @@ package com.draco.netthrottle.fragments
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import androidx.preference.EditTextPreference
@@ -113,6 +114,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
         enableRadioBugDetection = findPreference(getString(R.string.pref_profile_key_enable_radio_bug_detection))!!
 
         refreshSettings()
+        lockSettings()
     }
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
@@ -127,6 +129,19 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
             else -> return super.onPreferenceTreeClick(preference)
         }
         return true
+    }
+
+    /**
+     * Lock specific settings if the Android version does not support it
+     */
+    private fun lockSettings() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            dataStallRecoveryOnBadNetwork.isVisible = false
+            minDurationBetweenRecoverySteps.isVisible = false
+            enableRadioBugDetection.isVisible = false
+            locationAccessCheckIntervalMillis.isVisible = false
+            locationAccessCheckDelayMillis.isVisible = false
+        }
     }
 
     /**
