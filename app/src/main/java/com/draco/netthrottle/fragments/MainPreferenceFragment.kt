@@ -145,18 +145,30 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     }
 
     /**
+     * Update the icon beside the setting to alert the user if this is set or not
+     */
+    private fun updateSettingUnsetTag(setting: EditTextPreference) {
+        if (!setting.text.isNullOrBlank())
+            setting.setIcon(R.drawable.ic_baseline_spellcheck_24)
+        else
+            setting.icon = null
+    }
+
+    /**
      * Helper for fetching current setting
      */
     private fun refreshSettingViaConstant(setting: EditTextPreference, constant: String, namespace: Int) {
         val contentResolver = requireContext().contentResolver
+
         val constValue = when (namespace) {
             SettingsNamespaces.GLOBAL -> Settings.Global.getString(contentResolver, constant)
             SettingsNamespaces.SYSTEM -> Settings.System.getString(contentResolver, constant)
             SettingsNamespaces.SECURE -> Settings.Secure.getString(contentResolver, constant)
-            else -> return
+            else -> null
         }
 
         setting.text = constValue
+        updateSettingUnsetTag(setting)
     }
 
     /**
@@ -164,12 +176,19 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      */
     private fun applySettingViaConstant(setting: EditTextPreference, constant: String, namespace: Int) {
         val contentResolver = requireContext().contentResolver
-        val constVal = setting.text ?: return
 
-        when (namespace) {
-            SettingsNamespaces.GLOBAL -> Settings.Global.putString(contentResolver, constant, constVal)
-            SettingsNamespaces.SYSTEM -> Settings.System.putString(contentResolver, constant, constVal)
-            SettingsNamespaces.SECURE -> Settings.Secure.putString(contentResolver, constant, constVal)
+        updateSettingUnsetTag(setting)
+
+        val constVal = setting.text ?: return
+        try {
+            when (namespace) {
+                SettingsNamespaces.GLOBAL -> Settings.Global.putString(contentResolver, constant, constVal)
+                SettingsNamespaces.SYSTEM -> Settings.System.putString(contentResolver, constant, constVal)
+                SettingsNamespaces.SECURE -> Settings.Secure.putString(contentResolver, constant, constVal)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Snackbar.make(requireView(), getString(R.string.snackbar_failed_to_apply), Snackbar.LENGTH_SHORT).show()
         }
     }
 
