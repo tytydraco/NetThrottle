@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="@string/category_config">
+    <PreferenceCategory android:title="@string/category_config_mobile_data">
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/category_about">
         <Preference
