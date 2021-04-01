@@ -189,6 +189,51 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      * Take the UI settings and apply them as constants
      */
     private fun applySettings() {
+        applySettingViaConstant(dataActivityTimeoutWifi, SettingsConstants.Global.DATA_ACTIVITY_TIMEOUT_WIFI, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiBadgingThresholds, SettingsConstants.Global.WIFI_BADGING_THRESHOLDS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiFrameworkScanIntervalMs, SettingsConstants.Global.WIFI_FRAMEWORK_SCAN_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiIdleMs, SettingsConstants.Global.WIFI_IDLE_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(speedLabelCacheEvictionAgeMillis, SettingsConstants.Global.SPEED_LABEL_CACHE_EVICTION_AGE_MILLIS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiSupplicantScanIntervalMs, SettingsConstants.Global.WIFI_SUPPLICANT_SCAN_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiWatchdogPoorNetworkTestEnabled, SettingsConstants.Global.WIFI_WATCHDOG_POOR_NETWORK_TEST_ENABLED, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiMaxDHCPRetryCount, SettingsConstants.Global.WIFI_MAX_DHCP_RETRY_COUNT, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiEphemeralOutOfRangeTimeoutMs, SettingsConstants.Global.WIFI_EPHEMERAL_OUT_OF_RANGE_TIMEOUT_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiBounceDelayOverrideMs, SettingsConstants.Global.WIFI_BOUNCE_DELAY_OVERRIDE_MS, SettingsNamespaces.GLOBAL)
+
+        applySettingViaConstant(dataActivityTimeoutMobile, SettingsConstants.Global.DATA_ACTIVITY_TIMEOUT_MOBILE, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(wifiMobileDataTransitionWakelockTimeoutMs, SettingsConstants.Global.WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(mdcInitialMaxRetry, SettingsConstants.Global.MDC_INITIAL_MAX_RETRY, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(pdpWatchdogPollIntervalMs, SettingsConstants.Global.PDP_WATCHDOG_POLL_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(pdpWatchdogLongPollIntervalMs, SettingsConstants.Global.PDP_WATCHDOG_LONG_POLL_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(pdpWatchdogErrorPollIntervalMs, SettingsConstants.Global.PDP_WATCHDOG_ERROR_POLL_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(pdpWatchdogTriggerPacketCount, SettingsConstants.Global.PDP_WATCHDOG_TRIGGER_PACKET_COUNT, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(pdpWatchdogErrorPollCount, SettingsConstants.Global.PDP_WATCHDOG_ERROR_POLL_COUNT, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(pdpWatchdogMaxPdpResetFailCount, SettingsConstants.Global.PDP_WATCHDOG_MAX_PDP_RESET_FAIL_COUNT, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(dataStallAlarmNonAggressiveDelayInMs, SettingsConstants.Global.DATA_STALL_ALARM_NON_AGGRESSIVE_DELAY_IN_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(dataStallAlarmAggressiveDelayInMs, SettingsConstants.Global.DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(dataStallRecoveryOnBadNetwork, SettingsConstants.Global.DATA_STALL_RECOVERY_ON_BAD_NETWORK, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(minDurationBetweenRecoverySteps, SettingsConstants.Global.MIN_DURATION_BETWEEN_RECOVERY_STEPS_IN_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(provisioningApnAlarmDelayInMs, SettingsConstants.Global.PROVISIONING_APN_ALARM_DELAY_IN_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(gprsRegisterCheckPeriodMs, SettingsConstants.Global.GPRS_REGISTER_CHECK_PERIOD_MS, SettingsNamespaces.GLOBAL)
+
+        applySettingViaConstant(netStatsEnabled, SettingsConstants.Global.NETSTATS_ENABLED, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(netPolicyQuotaEnabled, SettingsConstants.Global.NETPOLICY_QUOTA_ENABLED, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(tcpDefaultInitRWND, SettingsConstants.Global.TCP_DEFAULT_INIT_RWND, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(nsdOn, SettingsConstants.Global.NSD_ON, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(inetConditionDebounceUpDelay, SettingsConstants.Global.INET_CONDITION_DEBOUNCE_UP_DELAY, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(inetConditionDebounceDownDelay, SettingsConstants.Global.INET_CONDITION_DEBOUNCE_DOWN_DELAY, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(ephemeralCookieMaxSizeBytes, SettingsConstants.Global.EPHEMERAL_COOKIE_MAX_SIZE_BYTES, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(syncMaxRetryDelayInSeconds, SettingsConstants.Global.SYNC_MAX_RETRY_DELAY_IN_SECONDS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(connectivitySamplingIntervalInSeconds, SettingsConstants.Global.CONNECTIVITY_SAMPLING_INTERVAL_IN_SECONDS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(networkAccessTimeoutMs, SettingsConstants.Global.NETWORK_ACCESS_TIMEOUT_MS, SettingsNamespaces.GLOBAL)
+
+        applySettingViaConstant(locationBackgroundThrottleIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(locationBackgroundThrottleProximityAlertIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(locationGlobalKillSwitch, SettingsConstants.Global.LOCATION_GLOBAL_KILL_SWITCH, SettingsNamespaces.GLOBAL)
+        applySettingViaConstant(locationAccessCheckIntervalMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_INTERVAL_MILLIS, SettingsNamespaces.SECURE)
+        applySettingViaConstant(locationAccessCheckDelayMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_DELAY_MILLIS, SettingsNamespaces.SECURE)
+
+        applySettingViaConstant(enableRadioBugDetection, SettingsConstants.Global.ENABLE_RADIO_BUG_DETECTION, SettingsNamespaces.GLOBAL)
     }
 
     override fun onResume() {
