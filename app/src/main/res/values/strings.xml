@@ -13,6 +13,12 @@
     <string name="snackbar_intent_failed">Could not handle this action</string>
     <string name="snackbar_failed_to_apply">Failed to apply; device is likely incompatible</string>
 
+    <string name="dialog_title_warn">Warning</string>
+    <string name="dialog_message_warn">Thank you for using NetThrottle. Please be aware that any changes that you make you your device using this app is not covered by any warranty. Uninstalling the app will <b>not</b> undo the changes made to the system. Entries that are blank by default are settings that the device does not have configured yet; it does not mean that the setting does not work, it just means that the default value for the system is used. For boolean fields, use 1 for true and 0 for false. For support, email tylernij@gmail.com.</string>
+    <string name="dialog_ok">Okay</string>
+
+    <string name="pref_key_first_launch">first_launch</string>
+
     <string name="developer_url">https://www.github.com/tytydraco</string>
     <string name="source_url">https://www.github.com/tytydraco/NetThrottle</string>
     <string name="contact_url">mailto:tylernij@gmail.com</string>
