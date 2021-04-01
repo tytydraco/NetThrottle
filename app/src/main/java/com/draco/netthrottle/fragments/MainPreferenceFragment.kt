@@ -142,6 +142,12 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
             locationAccessCheckIntervalMillis.isVisible = false
             locationAccessCheckDelayMillis.isVisible = false
         }
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P)
+            netPolicyQuotaEnabled.isVisible = false
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O_MR1)
+            speedLabelCacheEvictionAgeMillis.isVisible = false
     }
 
     /**
