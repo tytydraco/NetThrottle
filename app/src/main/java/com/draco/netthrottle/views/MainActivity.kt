@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentContainerView
-import com.draco.buoy.fragments.MainPreferenceFragment
+import com.draco.netthrottle.fragments.MainPreferenceFragment
 import com.draco.netthrottle.R
 import com.draco.netthrottle.utils.PermissionUtils
 

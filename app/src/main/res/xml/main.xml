@@ -22,10 +22,6 @@
             android:title="@string/pref_profile_title_speed_label_cache_eviction_age_millis"
             android:summary="@string/pref_profile_summary_speed_label_cache_eviction_age_millis" />
         <EditTextPreference
-            android:key="@string/pref_profile_key_speed_label_cache_eviction_age_millis"
-            android:title="@string/pref_profile_title_speed_label_cache_eviction_age_millis"
-            android:summary="@string/pref_profile_summary_speed_label_cache_eviction_age_millis" />
-        <EditTextPreference
             android:key="@string/pref_profile_key_wifi_supplicant_scan_interval_ms"
             android:title="@string/pref_profile_title_wifi_supplicant_scan_interval_ms"
             android:summary="@string/pref_profile_summary_wifi_supplicant_scan_interval_ms" />
@@ -37,10 +33,6 @@
             android:key="@string/pref_profile_key_wifi_max_dhcp_retry_count"
             android:title="@string/pref_profile_title_wifi_max_dhcp_retry_count"
             android:summary="@string/pref_profile_summary_wifi_max_dhcp_retry_count" />
-        <EditTextPreference
-            android:key="@string/pref_profile_key_wifi_mobile_data_transition_wakelock_timeout_ms"
-            android:title="@string/pref_profile_title_wifi_mobile_data_transition_wakelock_timeout_ms"
-            android:summary="@string/pref_profile_summary_wifi_mobile_data_transition_wakelock_timeout_ms" />
         <EditTextPreference
             android:key="@string/pref_profile_key_wifi_ephemeral_out_of_range_timeout_ms"
             android:title="@string/pref_profile_title_wifi_ephemeral_out_of_range_timeout_ms"
@@ -55,6 +47,10 @@
             android:key="@string/pref_profile_key_data_activity_timeout_mobile"
             android:title="@string/pref_profile_title_data_activity_timeout_mobile"
             android:summary="@string/pref_profile_summary_data_activity_timeout_mobile" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_mobile_data_transition_wakelock_timeout_ms"
+            android:title="@string/pref_profile_title_wifi_mobile_data_transition_wakelock_timeout_ms"
+            android:summary="@string/pref_profile_summary_wifi_mobile_data_transition_wakelock_timeout_ms" />
         <EditTextPreference
             android:key="@string/pref_profile_key_mdc_initial_max_retry"
             android:title="@string/pref_profile_title_mdc_initial_max_retry"

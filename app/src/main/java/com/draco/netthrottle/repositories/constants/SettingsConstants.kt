@@ -10,11 +10,11 @@ object SettingsConstants {
         const val WIFI_SUPPLICANT_SCAN_INTERVAL_MS =                "wifi_supplicant_scan_interval_ms"
         const val WIFI_WATCHDOG_POOR_NETWORK_TEST_ENABLED =         "wifi_watchdog_poor_network_test_enabled"
         const val WIFI_MAX_DHCP_RETRY_COUNT =                       "wifi_max_dhcp_retry_count"
-        const val WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS = "wifi_mobile_data_transition_wakelock_timeout_ms"
         const val WIFI_EPHEMERAL_OUT_OF_RANGE_TIMEOUT_MS =          "wifi_ephemeral_out_of_range_timeout_ms"
         const val WIFI_BOUNCE_DELAY_OVERRIDE_MS =                   "wifi_bounce_delay_override_ms"
 
         const val DATA_ACTIVITY_TIMEOUT_MOBILE =                    "data_activity_timeout_mobile"
+        const val WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS = "wifi_mobile_data_transition_wakelock_timeout_ms"
         const val MDC_INITIAL_MAX_RETRY =                           "mdc_initial_max_retry"
         const val PDP_WATCHDOG_POLL_INTERVAL_MS =                   "pdp_watchdog_poll_interval_ms"
         const val PDP_WATCHDOG_LONG_POLL_INTERVAL_MS =              "pdp_watchdog_long_poll_interval_ms"
