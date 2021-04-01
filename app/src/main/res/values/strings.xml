@@ -21,6 +21,7 @@
     <string name="category_config_network">Network</string>
     <string name="category_config_bluetooth">Bluetooth</string>
     <string name="category_config_location">Location</string>
+    <string name="category_config_radio">Radio</string>
 
     <string name="pref_profile_key_data_activity_timeout_mobile">data_activity_timeout_mobile</string>
     <string name="pref_profile_title_data_activity_timeout_mobile">Data Activity Timeout (Mobile)</string>
