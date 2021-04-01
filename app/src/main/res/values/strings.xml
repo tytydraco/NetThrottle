@@ -18,6 +18,170 @@
     <string name="category_about">About</string>
     <string name="category_config">Configuration</string>
 
+    <string name="pref_profile_key_data_activity_timeout_mobile">data_activity_timeout_mobile</string>
+    <string name="pref_profile_title_data_activity_timeout_mobile">Data Activity Timeout (Mobile)</string>
+    <string name="pref_profile_summary_data_activity_timeout_mobile">Timeout in seconds until an active mobile data connection becomes inactive</string>
+
+    <string name="pref_profile_key_data_activity_timeout_wifi">data_activity_timeout_wifi</string>
+    <string name="pref_profile_title_data_activity_timeout_wifi">Data Activity Timeout (Wifi)</string>
+    <string name="pref_profile_summary_data_activity_timeout_wifi">Timeout in seconds until an active Wifi connection becomes inactive</string>
+
+    <string name="pref_profile_key_mdc_initial_max_retry">mdc_initial_max_retry</string>
+    <string name="pref_profile_title_mdc_initial_max_retry">Mobile Data Connection Retry Count</string>
+    <string name="pref_profile_summary_mdc_initial_max_retry">Number of retries to perform when creating the initial data connection</string>
+
+    <string name="pref_profile_key_location_background_throttle_interval_ms">location_background_throttle_interval_ms</string>
+    <string name="pref_profile_title_location_background_throttle_interval_ms">Background Location Throttle Interval</string>
+    <string name="pref_profile_summary_location_background_throttle_interval_ms">Interval in milliseconds in which background location requests will be throttled</string>
+
+    <string name="pref_profile_key_location_background_throttle_proximity_alert_interval_ms">location_background_throttle_proximity_alert_interval_ms</string>
+    <string name="pref_profile_title_location_background_throttle_proximity_alert_interval_ms">Background Location Throttle Proximity Alert Interval</string>
+    <string name="pref_profile_summary_location_background_throttle_proximity_alert_interval_ms">Minimum interval in milliseconds in which background location requests are allowed to be sent</string>
+
+    <string name="pref_profile_key_netstats_enabled">netstats_enabled</string>
+    <string name="pref_profile_title_netstats_enabled">Enable NetStats</string>
+    <string name="pref_profile_summary_netstats_enabled">Allow requesting programs to query network statistics for debugging purposes</string>
+
+    <string name="pref_profile_key_netpolicy_quota_enabled">netpolicy_quota_enabled</string>
+    <string name="pref_profile_title_netpolicy_quota_enabled">Enable NetPolicy Quota</string>
+    <string name="pref_profile_summary_netpolicy_quota_enabled">Restrict the maximum amount of bytes that is allowed to leave the device (based on roaming, metered connections, etc.)</string>
+
+    <string name="pref_profile_key_pdp_watchdog_poll_interval_ms">pdp_watchdog_poll_interval_ms</string>
+    <string name="pref_profile_title_pdp_watchdog_poll_interval_ms">PDP Watchdog Poll Interval</string>
+    <string name="pref_profile_summary_pdp_watchdog_poll_interval_ms">Interval in milliseconds to detect possible mobile data connection issues while the screen is on</string>
+
+    <string name="pref_profile_key_pdp_watchdog_long_poll_interval_ms">pdp_watchdog_long_poll_interval_ms</string>
+    <string name="pref_profile_title_pdp_watchdog_long_poll_interval_ms">PDP Watchdog Long Poll Interval</string>
+    <string name="pref_profile_summary_pdp_watchdog_long_poll_interval_ms">Interval in milliseconds to detect possible mobile data connection issues while the screen is off</string>
+
+    <string name="pref_profile_key_pdp_watchdog_error_poll_interval_ms">pdp_watchdog_error_poll_interval_ms</string>
+    <string name="pref_profile_title_pdp_watchdog_error_poll_interval_ms">PDP Watchdog Error Poll Interval</string>
+    <string name="pref_profile_summary_pdp_watchdog_error_poll_interval_ms">Interval in milliseconds to check if we have exceed our outgoing packet threshold without receiving any incoming packets on mobile data</string>
+
+    <string name="pref_profile_key_pdp_watchdog_trigger_packet_count">pdp_watchdog_trigger_packet_count</string>
+    <string name="pref_profile_title_pdp_watchdog_trigger_packet_count">PDP Watchdog Trigger Packet Count</string>
+    <string name="pref_profile_summary_pdp_watchdog_trigger_packet_count">The number of outgoing packets sent without any incoming packets before we consider it erroneous on mobile data</string>
+
+    <string name="pref_profile_key_pdp_watchdog_error_poll_count">pdp_watchdog_error_poll_count</string>
+    <string name="pref_profile_title_pdp_watchdog_error_poll_count">PDP Watchdog Error Poll Count</string>
+    <string name="pref_profile_summary_pdp_watchdog_error_poll_count">Number of times to poll via the PDP Watchdog Error Poll Interval before attempting data recovery</string>
+
+    <string name="pref_profile_key_pdp_watchdog_max_pdp_reset_fail_count">pdp_watchdog_max_pdp_reset_fail_count</string>
+    <string name="pref_profile_title_pdp_watchdog_max_pdp_reset_fail_count">PDP Watchdog Max Reset Fail Count</string>
+    <string name="pref_profile_summary_pdp_watchdog_max_pdp_reset_fail_count">The maximum number of failed mobile data recovery attempts before attempting more drastic measures</string>
+
+    <string name="pref_profile_key_tcp_default_init_rwnd">tcp_default_init_rwnd</string>
+    <string name="pref_profile_title_tcp_default_init_rwnd">TCP Initial Receiver Window Size</string>
+    <string name="pref_profile_summary_tcp_default_init_rwnd">The size in segments of the TCP receiver window; when it is full, the client asks the server to throttle the connection so that it can process the data</string>
+
+    <string name="pref_profile_key_wifi_badging_thresholds">wifi_badging_thresholds</string>
+    <string name="pref_profile_title_wifi_badging_thresholds">Wifi Badging Thresholds</string>
+    <string name="pref_profile_summary_wifi_badging_thresholds">Rates the network for video playback if the minimum network throughput is greater than or equal to some speed in kbps. Formatted as a key-value such as key0=value0,key1=value1,…. Valid keys are 0, 10, 20, and 30, which are None, SD, HD, and 4K, respectively.</string>
+
+    <string name="pref_profile_key_wifi_framework_scan_interval_ms">wifi_framework_scan_interval_ms</string>
+    <string name="pref_profile_title_wifi_framework_scan_interval_ms">Wifi Scan Interval</string>
+    <string name="pref_profile_summary_wifi_framework_scan_interval_ms">Interval in milliseconds to wake up and scan for available Wifi networks while the screen is off and moving</string>
+
+    <string name="pref_profile_key_wifi_idle_ms">wifi_idle_ms</string>
+    <string name="pref_profile_title_wifi_idle_ms">Wifi Idle Interval</string>
+    <string name="pref_profile_summary_wifi_idle_ms">Interval in milliseconds until a Wifi connection is considered idle, and it is possible to switch to mobile data</string>
+
+    <string name="pref_profile_key_speed_label_cache_eviction_age_millis">speed_label_cache_eviction_age_millis</string>
+    <string name="pref_profile_title_speed_label_cache_eviction_age_millis">Wifi Speed Label Cache Interval</string>
+    <string name="pref_profile_summary_speed_label_cache_eviction_age_millis">Interval in milliseconds until cached speed scores for Wifi networks are invalidated</string>
+
+    <string name="pref_profile_key_ble_scan_always_enabled">ble_scan_always_enabled</string>
+    <string name="pref_profile_title_ble_scan_always_enabled">BLE Scans Always Allowed</string>
+    <string name="pref_profile_summary_ble_scan_always_enabled">Allow Bluetooth low-energy scans to happen even if the device has Bluetooth turned off</string>
+
+    <string name="pref_profile_key_wifi_supplicant_scan_interval_ms">wifi_supplicant_scan_interval_ms</string>
+    <string name="pref_profile_title_wifi_supplicant_scan_interval_ms">Wifi Supplicant Scan Interval</string>
+    <string name="pref_profile_summary_wifi_supplicant_scan_interval_ms">Interval in milliseconds to scan for network changes</string>
+
+    <string name="pref_profile_key_wifi_watchdog_poor_network_test_enabled">wifi_watchdog_poor_network_test_enabled</string>
+    <string name="pref_profile_title_wifi_watchdog_poor_network_test_enabled"></string>
+    <string name="pref_profile_summary_wifi_watchdog_poor_network_test_enabled"></string>
+
+    <string name="pref_profile_key_wifi_max_dhcp_retry_count">wifi_max_dhcp_retry_count</string>
+    <string name="pref_profile_title_wifi_max_dhcp_retry_count"></string>
+    <string name="pref_profile_summary_wifi_max_dhcp_retry_count"></string>
+
+    <string name="pref_profile_key_wifi_mobile_data_transition_wakelock_timeout_ms">wifi_mobile_data_transition_wakelock_timeout_ms</string>
+    <string name="pref_profile_title_wifi_mobile_data_transition_wakelock_timeout_ms"></string>
+    <string name="pref_profile_summary_wifi_mobile_data_transition_wakelock_timeout_ms"></string>
+
+    <string name="pref_profile_key_wifi_ephemeral_out_of_range_timeout_ms">wifi_ephemeral_out_of_range_timeout_ms</string>
+    <string name="pref_profile_title_wifi_ephemeral_out_of_range_timeout_ms"></string>
+    <string name="pref_profile_summary_wifi_ephemeral_out_of_range_timeout_ms"></string>
+
+    <string name="pref_profile_key_data_stall_alarm_non_aggressive_delay_in_ms">data_stall_alarm_non_aggressive_delay_in_ms</string>
+    <string name="pref_profile_title_data_stall_alarm_non_aggressive_delay_in_ms"></string>
+    <string name="pref_profile_summary_data_stall_alarm_non_aggressive_delay_in_ms"></string>
+
+    <string name="pref_profile_key_data_stall_alarm_aggressive_delay_in_ms">data_stall_alarm_aggressive_delay_in_ms</string>
+    <string name="pref_profile_title_data_stall_alarm_aggressive_delay_in_ms"></string>
+    <string name="pref_profile_summary_data_stall_alarm_aggressive_delay_in_ms"></string>
+
+    <string name="pref_profile_key_provisioning_apn_alarm_delay_in_ms">provisioning_apn_alarm_delay_in_ms</string>
+    <string name="pref_profile_title_provisioning_apn_alarm_delay_in_ms"></string>
+    <string name="pref_profile_summary_provisioning_apn_alarm_delay_in_ms"></string>
+
+    <string name="pref_profile_key_gprs_register_check_period_ms">gprs_register_check_period_ms</string>
+    <string name="pref_profile_title_gprs_register_check_period_ms"></string>
+    <string name="pref_profile_summary_gprs_register_check_period_ms"></string>
+
+    <string name="pref_profile_key_sync_max_retry_delay_in_seconds">sync_max_retry_delay_in_seconds</string>
+    <string name="pref_profile_title_sync_max_retry_delay_in_seconds"></string>
+    <string name="pref_profile_summary_sync_max_retry_delay_in_seconds"></string>
+
+    <string name="pref_profile_key_connectivity_sampling_interval_in_seconds">connectivity_sampling_interval_in_seconds</string>
+    <string name="pref_profile_title_connectivity_sampling_interval_in_seconds"></string>
+    <string name="pref_profile_summary_connectivity_sampling_interval_in_seconds"></string>
+
+    <string name="pref_profile_key_data_stall_recovery_on_bad_network">data_stall_recovery_on_bad_network</string>
+    <string name="pref_profile_title_data_stall_recovery_on_bad_network"></string>
+    <string name="pref_profile_summary_data_stall_recovery_on_bad_network"></string>
+
+    <string name="pref_profile_key_min_duration_between_recovery_steps">min_duration_between_recovery_steps</string>
+    <string name="pref_profile_title_min_duration_between_recovery_steps"></string>
+    <string name="pref_profile_summary_min_duration_between_recovery_steps"></string>
+
+    <string name="pref_profile_key_nsd_on">nsd_on</string>
+    <string name="pref_profile_title_nsd_on"></string>
+    <string name="pref_profile_summary_nsd_on"></string>
+
+    <string name="pref_profile_key_inet_condition_debounce_up_delay">inet_condition_debounce_up_delay</string>
+    <string name="pref_profile_title_inet_condition_debounce_up_delay"></string>
+    <string name="pref_profile_summary_inet_condition_debounce_up_delay"></string>
+
+    <string name="pref_profile_key_inet_condition_debounce_down_delay">inet_condition_debounce_down_delay</string>
+    <string name="pref_profile_title_inet_condition_debounce_down_delay"></string>
+    <string name="pref_profile_summary_inet_condition_debounce_down_delay"></string>
+
+    <string name="pref_profile_key_enable_radio_bug_detection">enable_radio_bug_detection</string>
+    <string name="pref_profile_title_enable_radio_bug_detection"></string>
+    <string name="pref_profile_summary_enable_radio_bug_detection"></string>
+
+    <string name="pref_profile_key_wifi_bounce_delay_override_ms">wifi_bounce_delay_override_ms</string>
+    <string name="pref_profile_title_wifi_bounce_delay_override_ms"></string>
+    <string name="pref_profile_summary_wifi_bounce_delay_override_ms"></string>
+
+    <string name="pref_profile_key_ephemeral_cookie_max_size_bytes">ephemeral_cookie_max_size_bytes</string>
+    <string name="pref_profile_title_ephemeral_cookie_max_size_bytes"></string>
+    <string name="pref_profile_summary_ephemeral_cookie_max_size_bytes"></string>
+
+    <string name="pref_profile_key_network_access_timeout_ms">network_access_timeout_ms</string>
+    <string name="pref_profile_title_network_access_timeout_ms"></string>
+    <string name="pref_profile_summary_network_access_timeout_ms"></string>
+
+    <string name="pref_profile_key_location_global_kill_switch">location_global_kill_switch</string>
+    <string name="pref_profile_title_location_global_kill_switch"></string>
+    <string name="pref_profile_summary_location_global_kill_switch"></string>
+
+    <string name="pref_profile_key_location_access_check_interval_millis">location_access_check_interval_millis</string>
+    <string name="pref_profile_title_location_access_check_interval_millis"></string>
+    <string name="pref_profile_summary_location_access_check_interval_millis"></string>
+
     <string name="pref_developer_title">Developer</string>
     <string name="pref_developer_summary">Tyler Nijmeh</string>
     <string name="pref_developer_key">developer</string>
