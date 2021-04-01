@@ -168,7 +168,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      */
     private fun updateSettingUnsetTag(setting: EditTextPreference) {
         if (!setting.text.isNullOrBlank())
-            setting.setIcon(R.drawable.ic_baseline_spellcheck_24)
+            setting.setIcon(R.drawable.ic_baseline_edit_24)
         else
             setting.icon = null
     }
