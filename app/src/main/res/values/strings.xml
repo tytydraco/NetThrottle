@@ -31,163 +31,163 @@
     <string name="category_config_radio">Radio</string>
 
     <string name="pref_profile_key_data_activity_timeout_mobile">data_activity_timeout_mobile</string>
-    <string name="pref_profile_title_data_activity_timeout_mobile">Data Activity Timeout (Mobile)</string>
+    <string name="pref_profile_title_data_activity_timeout_mobile">Data activity timeout (Mobile)</string>
     <string name="pref_profile_summary_data_activity_timeout_mobile">Timeout in seconds until an active mobile data connection becomes inactive</string>
 
     <string name="pref_profile_key_data_activity_timeout_wifi">data_activity_timeout_wifi</string>
-    <string name="pref_profile_title_data_activity_timeout_wifi">Data Activity Timeout (Wifi)</string>
+    <string name="pref_profile_title_data_activity_timeout_wifi">Data activity timeout (Wifi)</string>
     <string name="pref_profile_summary_data_activity_timeout_wifi">Timeout in seconds until an active Wifi connection becomes inactive</string>
 
     <string name="pref_profile_key_mdc_initial_max_retry">mdc_initial_max_retry</string>
-    <string name="pref_profile_title_mdc_initial_max_retry">Mobile Data Connection Retry Count</string>
+    <string name="pref_profile_title_mdc_initial_max_retry">Mobile data connection retry count</string>
     <string name="pref_profile_summary_mdc_initial_max_retry">Number of retries to perform when creating the initial data connection</string>
 
     <string name="pref_profile_key_location_background_throttle_interval_ms">location_background_throttle_interval_ms</string>
-    <string name="pref_profile_title_location_background_throttle_interval_ms">Background Location Throttle Interval</string>
+    <string name="pref_profile_title_location_background_throttle_interval_ms">Background location throttle interval</string>
     <string name="pref_profile_summary_location_background_throttle_interval_ms">Interval in milliseconds in which background location requests will be throttled</string>
 
     <string name="pref_profile_key_location_background_throttle_proximity_alert_interval_ms">location_background_throttle_proximity_alert_interval_ms</string>
-    <string name="pref_profile_title_location_background_throttle_proximity_alert_interval_ms">Background Location Throttle Proximity Alert Interval</string>
+    <string name="pref_profile_title_location_background_throttle_proximity_alert_interval_ms">Background location throttle proximity alert interval</string>
     <string name="pref_profile_summary_location_background_throttle_proximity_alert_interval_ms">Minimum interval in milliseconds in which background location requests are allowed to be sent</string>
 
     <string name="pref_profile_key_netstats_enabled">netstats_enabled</string>
-    <string name="pref_profile_title_netstats_enabled">Enable NetStats</string>
+    <string name="pref_profile_title_netstats_enabled">Enable netstats</string>
     <string name="pref_profile_summary_netstats_enabled">Allow requesting programs to query network statistics for debugging purposes</string>
 
     <string name="pref_profile_key_netpolicy_quota_enabled">netpolicy_quota_enabled</string>
-    <string name="pref_profile_title_netpolicy_quota_enabled">Enable NetPolicy Quota</string>
+    <string name="pref_profile_title_netpolicy_quota_enabled">Enable netpolicy quota</string>
     <string name="pref_profile_summary_netpolicy_quota_enabled">Restrict the maximum amount of bytes that is allowed to leave the device (based on roaming, metered connections, etc.)</string>
 
     <string name="pref_profile_key_pdp_watchdog_poll_interval_ms">pdp_watchdog_poll_interval_ms</string>
-    <string name="pref_profile_title_pdp_watchdog_poll_interval_ms">PDP Watchdog Poll Interval</string>
+    <string name="pref_profile_title_pdp_watchdog_poll_interval_ms">PDP watchdog poll interval</string>
     <string name="pref_profile_summary_pdp_watchdog_poll_interval_ms">Interval in milliseconds to detect possible mobile data connection issues while the screen is on</string>
 
     <string name="pref_profile_key_pdp_watchdog_long_poll_interval_ms">pdp_watchdog_long_poll_interval_ms</string>
-    <string name="pref_profile_title_pdp_watchdog_long_poll_interval_ms">PDP Watchdog Long Poll Interval</string>
+    <string name="pref_profile_title_pdp_watchdog_long_poll_interval_ms">PDP watchdog long poll interval</string>
     <string name="pref_profile_summary_pdp_watchdog_long_poll_interval_ms">Interval in milliseconds to detect possible mobile data connection issues while the screen is off</string>
 
     <string name="pref_profile_key_pdp_watchdog_error_poll_interval_ms">pdp_watchdog_error_poll_interval_ms</string>
-    <string name="pref_profile_title_pdp_watchdog_error_poll_interval_ms">PDP Watchdog Error Poll Interval</string>
+    <string name="pref_profile_title_pdp_watchdog_error_poll_interval_ms">PDP watchdog error poll interval</string>
     <string name="pref_profile_summary_pdp_watchdog_error_poll_interval_ms">Interval in milliseconds to check if we have exceed our outgoing packet threshold without receiving any incoming packets on mobile data</string>
 
     <string name="pref_profile_key_pdp_watchdog_trigger_packet_count">pdp_watchdog_trigger_packet_count</string>
-    <string name="pref_profile_title_pdp_watchdog_trigger_packet_count">PDP Watchdog Trigger Packet Count</string>
+    <string name="pref_profile_title_pdp_watchdog_trigger_packet_count">PDP watchdog trigger packet count</string>
     <string name="pref_profile_summary_pdp_watchdog_trigger_packet_count">The number of outgoing packets sent without any incoming packets before we consider it erroneous on mobile data</string>
 
     <string name="pref_profile_key_pdp_watchdog_error_poll_count">pdp_watchdog_error_poll_count</string>
-    <string name="pref_profile_title_pdp_watchdog_error_poll_count">PDP Watchdog Error Poll Count</string>
+    <string name="pref_profile_title_pdp_watchdog_error_poll_count">PDP watchdog error poll count</string>
     <string name="pref_profile_summary_pdp_watchdog_error_poll_count">Number of times to poll via the PDP Watchdog Error Poll Interval before attempting data recovery</string>
 
     <string name="pref_profile_key_pdp_watchdog_max_pdp_reset_fail_count">pdp_watchdog_max_pdp_reset_fail_count</string>
-    <string name="pref_profile_title_pdp_watchdog_max_pdp_reset_fail_count">PDP Watchdog Max Reset Fail Count</string>
+    <string name="pref_profile_title_pdp_watchdog_max_pdp_reset_fail_count">PDP watchdog max reset fail count</string>
     <string name="pref_profile_summary_pdp_watchdog_max_pdp_reset_fail_count">The maximum number of failed mobile data recovery attempts before attempting more drastic measures</string>
 
     <string name="pref_profile_key_tcp_default_init_rwnd">tcp_default_init_rwnd</string>
-    <string name="pref_profile_title_tcp_default_init_rwnd">TCP Initial Receiver Window Size</string>
+    <string name="pref_profile_title_tcp_default_init_rwnd">TCP initial receiver window size</string>
     <string name="pref_profile_summary_tcp_default_init_rwnd">The size in segments of the TCP receiver window; when it is full, the client asks the server to throttle the connection so that it can process the data</string>
 
     <string name="pref_profile_key_wifi_badging_thresholds">wifi_badging_thresholds</string>
-    <string name="pref_profile_title_wifi_badging_thresholds">Wifi Badging Thresholds</string>
+    <string name="pref_profile_title_wifi_badging_thresholds">Wifi badging thresholds</string>
     <string name="pref_profile_summary_wifi_badging_thresholds">Rates the network for video playback if the minimum network throughput is greater than or equal to some speed in kbps. Formatted as a key-value such as key0=value0,key1=value1,…. Valid keys are 0, 10, 20, and 30, which are None, SD, HD, and 4K, respectively.</string>
 
     <string name="pref_profile_key_wifi_framework_scan_interval_ms">wifi_framework_scan_interval_ms</string>
-    <string name="pref_profile_title_wifi_framework_scan_interval_ms">Wifi Scan Interval</string>
+    <string name="pref_profile_title_wifi_framework_scan_interval_ms">Wifi scan interval</string>
     <string name="pref_profile_summary_wifi_framework_scan_interval_ms">Interval in milliseconds to wake up and scan for available Wifi networks while the screen is off and moving</string>
 
     <string name="pref_profile_key_wifi_idle_ms">wifi_idle_ms</string>
-    <string name="pref_profile_title_wifi_idle_ms">Wifi Idle Interval</string>
+    <string name="pref_profile_title_wifi_idle_ms">Wifi idle interval</string>
     <string name="pref_profile_summary_wifi_idle_ms">Interval in milliseconds until a Wifi connection is considered idle, and it is possible to switch to mobile data</string>
 
     <string name="pref_profile_key_speed_label_cache_eviction_age_millis">speed_label_cache_eviction_age_millis</string>
-    <string name="pref_profile_title_speed_label_cache_eviction_age_millis">Wifi Speed Label Cache Interval</string>
+    <string name="pref_profile_title_speed_label_cache_eviction_age_millis">Wifi speed label cache interval</string>
     <string name="pref_profile_summary_speed_label_cache_eviction_age_millis">Interval in milliseconds until cached speed scores for Wifi networks are invalidated</string>
 
     <string name="pref_profile_key_wifi_supplicant_scan_interval_ms">wifi_supplicant_scan_interval_ms</string>
-    <string name="pref_profile_title_wifi_supplicant_scan_interval_ms">Wifi Supplicant Scan Interval</string>
+    <string name="pref_profile_title_wifi_supplicant_scan_interval_ms">Wifi supplicant scan interval</string>
     <string name="pref_profile_summary_wifi_supplicant_scan_interval_ms">Interval in milliseconds to scan for network changes</string>
 
     <string name="pref_profile_key_wifi_watchdog_poor_network_test_enabled">wifi_watchdog_poor_network_test_enabled</string>
-    <string name="pref_profile_title_wifi_watchdog_poor_network_test_enabled">Wifi Watchdog Poor Network Test</string>
+    <string name="pref_profile_title_wifi_watchdog_poor_network_test_enabled">Wifi watchdog poor network test</string>
     <string name="pref_profile_summary_wifi_watchdog_poor_network_test_enabled">Avoid Wifi connections with poor performance</string>
 
     <string name="pref_profile_key_wifi_max_dhcp_retry_count">wifi_max_dhcp_retry_count</string>
-    <string name="pref_profile_title_wifi_max_dhcp_retry_count">Wifi Max DHCP Retry Count</string>
+    <string name="pref_profile_title_wifi_max_dhcp_retry_count">Wifi max DHCP retry count</string>
     <string name="pref_profile_summary_wifi_max_dhcp_retry_count">How many times we can retry IP address acquisition on a Wifi network before we fail completely</string>
 
     <string name="pref_profile_key_wifi_mobile_data_transition_wakelock_timeout_ms">wifi_mobile_data_transition_wakelock_timeout_ms</string>
-    <string name="pref_profile_title_wifi_mobile_data_transition_wakelock_timeout_ms">Wifi Mobile Data Transition Wakelock Timeout</string>
+    <string name="pref_profile_title_wifi_mobile_data_transition_wakelock_timeout_ms">Wifi mobile data transition wakelock timeout</string>
     <string name="pref_profile_summary_wifi_mobile_data_transition_wakelock_timeout_ms">Time in milliseconds to hold a wakelock while waiting for mobile data to connect after disconnecting from Wifi</string>
 
     <string name="pref_profile_key_wifi_ephemeral_out_of_range_timeout_ms">wifi_ephemeral_out_of_range_timeout_ms</string>
-    <string name="pref_profile_title_wifi_ephemeral_out_of_range_timeout_ms">Wifi Ephemeral Out-Of-Range Timeout</string>
+    <string name="pref_profile_title_wifi_ephemeral_out_of_range_timeout_ms">Wifi ephemeral out-of-range timeout</string>
     <string name="pref_profile_summary_wifi_ephemeral_out_of_range_timeout_ms">Timeout in milliseconds for ephemeral networks when all known BSSIDs are out of range, and we should disconnect from the network; a value of zero or lower will use conservative behavior</string>
 
     <string name="pref_profile_key_data_stall_alarm_non_aggressive_delay_in_ms">data_stall_alarm_non_aggressive_delay_in_ms</string>
-    <string name="pref_profile_title_data_stall_alarm_non_aggressive_delay_in_ms">Data Stall Alarm Delay (Non-Aggressive)</string>
+    <string name="pref_profile_title_data_stall_alarm_non_aggressive_delay_in_ms">Data stall alarm delay (non-aggressive)</string>
     <string name="pref_profile_summary_data_stall_alarm_non_aggressive_delay_in_ms">Delay in milliseconds to delay data stall detection when the screen is off</string>
 
     <string name="pref_profile_key_data_stall_alarm_aggressive_delay_in_ms">data_stall_alarm_aggressive_delay_in_ms</string>
-    <string name="pref_profile_title_data_stall_alarm_aggressive_delay_in_ms">Data Stall Alarm Delay (Aggressive)</string>
+    <string name="pref_profile_title_data_stall_alarm_aggressive_delay_in_ms">Data stall alarm delay (aggressive)</string>
     <string name="pref_profile_summary_data_stall_alarm_aggressive_delay_in_ms">Delay in milliseconds to delay data stall detection when the screen is on</string>
 
     <string name="pref_profile_key_provisioning_apn_alarm_delay_in_ms">provisioning_apn_alarm_delay_in_ms</string>
-    <string name="pref_profile_title_provisioning_apn_alarm_delay_in_ms">Provisioning APN Alarm Delay</string>
+    <string name="pref_profile_title_provisioning_apn_alarm_delay_in_ms">Provisioning APN alarm delay</string>
     <string name="pref_profile_summary_provisioning_apn_alarm_delay_in_ms">Delay in milliseconds to allow provisioning APNs to remain active</string>
 
     <string name="pref_profile_key_gprs_register_check_period_ms">gprs_register_check_period_ms</string>
-    <string name="pref_profile_title_gprs_register_check_period_ms">GPRS Register Check Period</string>
+    <string name="pref_profile_title_gprs_register_check_period_ms">GPRS register check period</string>
     <string name="pref_profile_summary_gprs_register_check_period_ms">Period in milliseconds to check 2G/3G GPRS registration problems</string>
 
     <string name="pref_profile_key_sync_max_retry_delay_in_seconds">sync_max_retry_delay_in_seconds</string>
-    <string name="pref_profile_title_sync_max_retry_delay_in_seconds">Sync Max Retry Delay</string>
+    <string name="pref_profile_title_sync_max_retry_delay_in_seconds">Sync max retry delay</string>
     <string name="pref_profile_summary_sync_max_retry_delay_in_seconds">Maximum delay in seconds to reconnect to networks during short outages</string>
 
     <string name="pref_profile_key_connectivity_sampling_interval_in_seconds">connectivity_sampling_interval_in_seconds</string>
-    <string name="pref_profile_title_connectivity_sampling_interval_in_seconds">Connectivity Sampling Interval</string>
+    <string name="pref_profile_title_connectivity_sampling_interval_in_seconds">Connectivity sampling interval</string>
     <string name="pref_profile_summary_connectivity_sampling_interval_in_seconds">Interval in seconds to generate sampled data such as packets sent and error rates</string>
 
     <string name="pref_profile_key_data_stall_recovery_on_bad_network">data_stall_recovery_on_bad_network</string>
-    <string name="pref_profile_title_data_stall_recovery_on_bad_network">Data Stall Recovery On Bad Networks</string>
+    <string name="pref_profile_title_data_stall_recovery_on_bad_network">Data stall recovery on bad networks</string>
     <string name="pref_profile_summary_data_stall_recovery_on_bad_network">Try to initiate cellular data recovery when a network connection is spotty</string>
 
     <string name="pref_profile_key_min_duration_between_recovery_steps">min_duration_between_recovery_steps</string>
-    <string name="pref_profile_title_min_duration_between_recovery_steps">Minimum Duration Between Cellular Data Recovery Steps</string>
+    <string name="pref_profile_title_min_duration_between_recovery_steps">Minimum duration between cellular data recovery steps</string>
     <string name="pref_profile_summary_min_duration_between_recovery_steps">Duration in milliseconds to wait between each cellular data recovery attempt</string>
 
     <string name="pref_profile_key_nsd_on">nsd_on</string>
-    <string name="pref_profile_title_nsd_on">Network Service Discovery</string>
+    <string name="pref_profile_title_nsd_on">Network service discovery</string>
     <string name="pref_profile_summary_nsd_on">Discover local devices on a network such as printers, HTTPS servers, etc.</string>
 
     <string name="pref_profile_key_inet_condition_debounce_up_delay">inet_condition_debounce_up_delay</string>
-    <string name="pref_profile_title_inet_condition_debounce_up_delay">INET Debounce Up-Delay</string>
+    <string name="pref_profile_title_inet_condition_debounce_up_delay">INET debounce up-delay</string>
     <string name="pref_profile_summary_inet_condition_debounce_up_delay">Delay in milliseconds to consume extra INET connection events after becoming fully connected</string>
 
     <string name="pref_profile_key_inet_condition_debounce_down_delay">inet_condition_debounce_down_delay</string>
-    <string name="pref_profile_title_inet_condition_debounce_down_delay">INET Debounce Down-Delay</string>
+    <string name="pref_profile_title_inet_condition_debounce_down_delay">INET debounce down-delay</string>
     <string name="pref_profile_summary_inet_condition_debounce_down_delay">Delay in milliseconds to consume extra INET connection events after becoming partly connected</string>
 
     <string name="pref_profile_key_enable_radio_bug_detection">enable_radio_bug_detection</string>
-    <string name="pref_profile_title_enable_radio_bug_detection">Radio Bug Detection</string>
+    <string name="pref_profile_title_enable_radio_bug_detection">Radio bug detection</string>
     <string name="pref_profile_summary_enable_radio_bug_detection">Detect and log RIL bugs; this holds a wakelock</string>
 
     <string name="pref_profile_key_wifi_bounce_delay_override_ms">wifi_bounce_delay_override_ms</string>
-    <string name="pref_profile_title_wifi_bounce_delay_override_ms">Wifi Bounce Delay</string>
+    <string name="pref_profile_title_wifi_bounce_delay_override_ms">Wifi bounce delay</string>
     <string name="pref_profile_summary_wifi_bounce_delay_override_ms">Delay in milliseconds before bouncing Wifi connections after restoring connection settings</string>
 
     <string name="pref_profile_key_ephemeral_cookie_max_size_bytes">ephemeral_cookie_max_size_bytes</string>
-    <string name="pref_profile_title_ephemeral_cookie_max_size_bytes">Ephemeral App Max Cookie Size</string>
+    <string name="pref_profile_title_ephemeral_cookie_max_size_bytes">Ephemeral app max cookie size</string>
     <string name="pref_profile_summary_ephemeral_cookie_max_size_bytes">Maximum size in bytes of instant app cookie size</string>
 
     <string name="pref_profile_key_network_access_timeout_ms">network_access_timeout_ms</string>
-    <string name="pref_profile_title_network_access_timeout_ms">Network Access Timeout</string>
+    <string name="pref_profile_title_network_access_timeout_ms">Network access timeout</string>
     <string name="pref_profile_summary_network_access_timeout_ms">Maximum timeout in milliseconds than apps can be blocked for while waiting for network rules to be updated</string>
 
     <string name="pref_profile_key_location_access_check_interval_millis">location_access_check_interval_millis</string>
-    <string name="pref_profile_title_location_access_check_interval_millis">Location Access Check Interval</string>
+    <string name="pref_profile_title_location_access_check_interval_millis">Location access check interval</string>
     <string name="pref_profile_summary_location_access_check_interval_millis">Interval in milliseconds to check for location access</string>
 
     <string name="pref_profile_key_location_access_check_delay_millis">location_access_check_delay_millis</string>
-    <string name="pref_profile_title_location_access_check_delay_millis">Location Access Check Delay</string>
+    <string name="pref_profile_title_location_access_check_delay_millis">Location access check delay</string>
     <string name="pref_profile_summary_location_access_check_delay_millis">Delay in milliseconds to check for location access after granting it</string>
 
     <string name="pref_developer_title">Developer</string>
