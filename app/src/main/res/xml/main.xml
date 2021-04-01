@@ -146,12 +146,6 @@
             android:title="@string/pref_profile_title_network_access_timeout_ms"
             android:summary="@string/pref_profile_summary_network_access_timeout_ms" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/category_config_bluetooth">
-        <SwitchPreference
-            android:key="@string/pref_profile_key_ble_scan_always_enabled"
-            android:title="@string/pref_profile_title_ble_scan_always_enabled"
-            android:summary="@string/pref_profile_summary_ble_scan_always_enabled" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="@string/category_config_location">
         <EditTextPreference
             android:key="@string/pref_profile_key_location_background_throttle_interval_ms"

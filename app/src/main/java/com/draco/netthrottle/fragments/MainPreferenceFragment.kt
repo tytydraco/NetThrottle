@@ -3,12 +3,15 @@ package com.draco.netthrottle.fragments
 import android.content.*
 import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import androidx.preference.*
 import com.draco.netthrottle.R
+import com.draco.netthrottle.repositories.constants.SettingsConstants
+import com.draco.netthrottle.repositories.constants.SettingsNamespaces
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.material.snackbar.Snackbar
 
-class MainPreferenceFragment : PreferenceFragmentCompat() {
+class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnSharedPreferenceChangeListener {
     private lateinit var dataActivityTimeoutWifi: EditTextPreference
     private lateinit var wifiBadgingThresholds: EditTextPreference
     private lateinit var wifiFrameworkScanIntervalMs: EditTextPreference
@@ -46,8 +49,6 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
     private lateinit var syncMaxRetryDelayInSeconds: EditTextPreference
     private lateinit var connectivitySamplingIntervalInSeconds: EditTextPreference
     private lateinit var networkAccessTimeoutMs: EditTextPreference
-
-    private lateinit var bleScanAlwaysEnabled: SwitchPreference
 
     private lateinit var locationBackgroundThrottleIntervalMs: EditTextPreference
     private lateinit var locationBackgroundThrottleProximityAlertIntervalMs: EditTextPreference
@@ -102,8 +103,6 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
         connectivitySamplingIntervalInSeconds = findPreference(getString(R.string.pref_profile_key_connectivity_sampling_interval_in_seconds))!!
         networkAccessTimeoutMs = findPreference(getString(R.string.pref_profile_key_network_access_timeout_ms))!!
 
-        bleScanAlwaysEnabled = findPreference(getString(R.string.pref_profile_key_ble_scan_always_enabled))!!
-
         locationBackgroundThrottleIntervalMs = findPreference(getString(R.string.pref_profile_key_location_background_throttle_interval_ms))!!
         locationBackgroundThrottleProximityAlertIntervalMs = findPreference(getString(R.string.pref_profile_key_location_background_throttle_proximity_alert_interval_ms))!!
         locationGlobalKillSwitch = findPreference(getString(R.string.pref_profile_key_location_global_kill_switch))!!
@@ -111,6 +110,8 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
         locationAccessCheckDelayMillis = findPreference(getString(R.string.pref_profile_key_location_access_check_delay_millis))!!
 
         enableRadioBugDetection = findPreference(getString(R.string.pref_profile_key_enable_radio_bug_detection))!!
+
+        refreshSettings()
     }
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
@@ -138,5 +139,72 @@ class MainPreferenceFragment : PreferenceFragmentCompat() {
             e.printStackTrace()
             Snackbar.make(requireView(), getString(R.string.snackbar_intent_failed), Snackbar.LENGTH_SHORT).show()
         }
+    }
+
+    /**
+     * Helper for fetching current setting
+     */
+    private fun refreshSettingViaConstant(setting: Any, constant: String, namespace: Int, defaultValue: String) {
+        val contentResolver = requireContext().contentResolver
+        val constValue = when (namespace) {
+            SettingsNamespaces.GLOBAL -> Settings.Global.getString(contentResolver, constant)
+            SettingsNamespaces.SYSTEM -> Settings.System.getString(contentResolver, constant)
+            SettingsNamespaces.SECURE -> Settings.Secure.getString(contentResolver, constant)
+            else -> return
+        } ?: defaultValue
+
+        when (setting) {
+            is SwitchPreference -> setting.isChecked = (constValue != "0")
+            is EditTextPreference -> setting.text = constValue
+        }
+    }
+
+    /**
+     * Helper for applying current setting
+     */
+    private fun applySettingViaConstant(setting: Any, constant: String, namespace: Int) {
+        val contentResolver = requireContext().contentResolver
+
+        val constVal = when (setting) {
+            is SwitchPreference -> setting.isChecked.toString()
+            is EditTextPreference -> setting.text
+            else -> null
+        }
+
+        when (namespace) {
+            SettingsNamespaces.GLOBAL -> Settings.Global.putString(contentResolver, constant, constVal)
+            SettingsNamespaces.SYSTEM -> Settings.System.putString(contentResolver, constant, constVal)
+            SettingsNamespaces.SECURE -> Settings.Secure.putString(contentResolver, constant, constVal)
+        }
+    }
+
+    /**
+     * Update the UI to show the new constants
+     */
+    private fun refreshSettings() {
+
+    }
+
+    /**
+     * Take the UI settings and apply them as constants
+     */
+    private fun applySettings() {
+    }
+
+    override fun onResume() {
+        super.onResume()
+        preferenceManager.sharedPreferences.registerOnSharedPreferenceChangeListener(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        preferenceManager.sharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
+    }
+
+    /**
+     * When settings are changed, apply the new config
+     */
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        applySettings()
     }
 }

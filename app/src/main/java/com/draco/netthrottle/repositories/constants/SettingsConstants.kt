@@ -40,8 +40,6 @@ object SettingsConstants {
         const val CONNECTIVITY_SAMPLING_INTERVAL_IN_SECONDS =       "connectivity_sampling_interval_in_seconds"
         const val NETWORK_ACCESS_TIMEOUT_MS =                       "network_access_timeout_ms"
 
-        const val BLE_SCAN_ALWAYS_AVAILABLE =                       "ble_scan_always_enabled"
-
         const val LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS =        "location_background_throttle_interval_ms"
         const val LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS =    "location_background_throttle_proximity_alert_interval_ms"
         const val LOCATION_GLOBAL_KILL_SWITCH =                     "location_global_kill_switch"

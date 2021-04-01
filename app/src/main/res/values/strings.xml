@@ -19,7 +19,6 @@
     <string name="category_config_wifi">Wifi</string>
     <string name="category_config_mobile_data">Mobile Data</string>
     <string name="category_config_network">Network</string>
-    <string name="category_config_bluetooth">Bluetooth</string>
     <string name="category_config_location">Location</string>
     <string name="category_config_radio">Radio</string>
 
@@ -94,10 +93,6 @@
     <string name="pref_profile_key_speed_label_cache_eviction_age_millis">speed_label_cache_eviction_age_millis</string>
     <string name="pref_profile_title_speed_label_cache_eviction_age_millis">Wifi Speed Label Cache Interval</string>
     <string name="pref_profile_summary_speed_label_cache_eviction_age_millis">Interval in milliseconds until cached speed scores for Wifi networks are invalidated</string>
-
-    <string name="pref_profile_key_ble_scan_always_enabled">ble_scan_always_enabled</string>
-    <string name="pref_profile_title_ble_scan_always_enabled">BLE Scans Always Allowed</string>
-    <string name="pref_profile_summary_ble_scan_always_enabled">Allow Bluetooth low-energy scans to happen even if the device has Bluetooth turned off</string>
 
     <string name="pref_profile_key_wifi_supplicant_scan_interval_ms">wifi_supplicant_scan_interval_ms</string>
     <string name="pref_profile_title_wifi_supplicant_scan_interval_ms">Wifi Supplicant Scan Interval</string>
