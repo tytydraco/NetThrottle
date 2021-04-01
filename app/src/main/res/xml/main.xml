@@ -1,6 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/category_config_wifi">
+        <EditTextPreference
+            android:key="@string/pref_profile_key_data_activity_timeout_wifi"
+            android:title="@string/pref_profile_title_data_activity_timeout_wifi"
+            android:summary="@string/pref_profile_summary_data_activity_timeout_wifi" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_badging_thresholds"
+            android:title="@string/pref_profile_title_wifi_badging_thresholds"
+            android:summary="@string/pref_profile_summary_wifi_badging_thresholds" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_framework_scan_interval_ms"
+            android:title="@string/pref_profile_title_wifi_framework_scan_interval_ms"
+            android:summary="@string/pref_profile_summary_wifi_framework_scan_interval_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_idle_ms"
+            android:title="@string/pref_profile_title_wifi_idle_ms"
+            android:summary="@string/pref_profile_summary_wifi_idle_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_speed_label_cache_eviction_age_millis"
+            android:title="@string/pref_profile_title_speed_label_cache_eviction_age_millis"
+            android:summary="@string/pref_profile_summary_speed_label_cache_eviction_age_millis" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_speed_label_cache_eviction_age_millis"
+            android:title="@string/pref_profile_title_speed_label_cache_eviction_age_millis"
+            android:summary="@string/pref_profile_summary_speed_label_cache_eviction_age_millis" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_supplicant_scan_interval_ms"
+            android:title="@string/pref_profile_title_wifi_supplicant_scan_interval_ms"
+            android:summary="@string/pref_profile_summary_wifi_supplicant_scan_interval_ms" />
+        <SwitchPreference
+            android:key="@string/pref_profile_key_wifi_watchdog_poor_network_test_enabled"
+            android:title="@string/pref_profile_title_wifi_watchdog_poor_network_test_enabled"
+            android:summary="@string/pref_profile_summary_wifi_watchdog_poor_network_test_enabled" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_max_dhcp_retry_count"
+            android:title="@string/pref_profile_title_wifi_max_dhcp_retry_count"
+            android:summary="@string/pref_profile_summary_wifi_max_dhcp_retry_count" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_mobile_data_transition_wakelock_timeout_ms"
+            android:title="@string/pref_profile_title_wifi_mobile_data_transition_wakelock_timeout_ms"
+            android:summary="@string/pref_profile_summary_wifi_mobile_data_transition_wakelock_timeout_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_ephemeral_out_of_range_timeout_ms"
+            android:title="@string/pref_profile_title_wifi_ephemeral_out_of_range_timeout_ms"
+            android:summary="@string/pref_profile_summary_wifi_ephemeral_out_of_range_timeout_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_wifi_bounce_delay_override_ms"
+            android:title="@string/pref_profile_title_wifi_bounce_delay_override_ms"
+            android:summary="@string/pref_profile_summary_wifi_bounce_delay_override_ms" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="@string/category_config_mobile_data">
+        <EditTextPreference
+            android:key="@string/pref_profile_key_data_activity_timeout_mobile"
+            android:title="@string/pref_profile_title_data_activity_timeout_mobile"
+            android:summary="@string/pref_profile_summary_data_activity_timeout_mobile" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_mdc_initial_max_retry"
+            android:title="@string/pref_profile_title_mdc_initial_max_retry"
+            android:summary="@string/pref_profile_summary_mdc_initial_max_retry" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_pdp_watchdog_poll_interval_ms"
+            android:title="@string/pref_profile_title_pdp_watchdog_poll_interval_ms"
+            android:summary="@string/pref_profile_summary_pdp_watchdog_poll_interval_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_pdp_watchdog_long_poll_interval_ms"
+            android:title="@string/pref_profile_title_pdp_watchdog_long_poll_interval_ms"
+            android:summary="@string/pref_profile_summary_pdp_watchdog_long_poll_interval_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_pdp_watchdog_error_poll_interval_ms"
+            android:title="@string/pref_profile_title_pdp_watchdog_error_poll_interval_ms"
+            android:summary="@string/pref_profile_summary_pdp_watchdog_error_poll_interval_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_pdp_watchdog_trigger_packet_count"
+            android:title="@string/pref_profile_title_pdp_watchdog_trigger_packet_count"
+            android:summary="@string/pref_profile_summary_pdp_watchdog_trigger_packet_count" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_pdp_watchdog_error_poll_count"
+            android:title="@string/pref_profile_title_pdp_watchdog_error_poll_count"
+            android:summary="@string/pref_profile_summary_pdp_watchdog_error_poll_count" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_pdp_watchdog_max_pdp_reset_fail_count"
+            android:title="@string/pref_profile_title_pdp_watchdog_max_pdp_reset_fail_count"
+            android:summary="@string/pref_profile_summary_pdp_watchdog_max_pdp_reset_fail_count" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_data_stall_alarm_non_aggressive_delay_in_ms"
+            android:title="@string/pref_profile_title_data_stall_alarm_non_aggressive_delay_in_ms"
+            android:summary="@string/pref_profile_summary_data_stall_alarm_non_aggressive_delay_in_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_data_stall_alarm_aggressive_delay_in_ms"
+            android:title="@string/pref_profile_title_data_stall_alarm_aggressive_delay_in_ms"
+            android:summary="@string/pref_profile_summary_data_stall_alarm_aggressive_delay_in_ms" />
+        <SwitchPreference
+            android:key="@string/pref_profile_key_data_stall_recovery_on_bad_network"
+            android:title="@string/pref_profile_title_data_stall_recovery_on_bad_network"
+            android:summary="@string/pref_profile_summary_data_stall_recovery_on_bad_network" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_min_duration_between_recovery_steps"
+            android:title="@string/pref_profile_title_min_duration_between_recovery_steps"
+            android:summary="@string/pref_profile_summary_min_duration_between_recovery_steps" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_provisioning_apn_alarm_delay_in_ms"
+            android:title="@string/pref_profile_title_provisioning_apn_alarm_delay_in_ms"
+            android:summary="@string/pref_profile_summary_provisioning_apn_alarm_delay_in_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_gprs_register_check_period_ms"
+            android:title="@string/pref_profile_title_gprs_register_check_period_ms"
+            android:summary="@string/pref_profile_summary_gprs_register_check_period_ms" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_config_network">
+        <SwitchPreference
+            android:key="@string/pref_profile_key_netstats_enabled"
+            android:title="@string/pref_profile_title_netstats_enabled"
+            android:summary="@string/pref_profile_summary_netstats_enabled" />
+        <SwitchPreference
+            android:key="@string/pref_profile_key_netpolicy_quota_enabled"
+            android:title="@string/pref_profile_title_netpolicy_quota_enabled"
+            android:summary="@string/pref_profile_summary_netpolicy_quota_enabled" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_tcp_default_init_rwnd"
+            android:title="@string/pref_profile_title_tcp_default_init_rwnd"
+            android:summary="@string/pref_profile_summary_tcp_default_init_rwnd" />
+        <SwitchPreference
+            android:key="@string/pref_profile_key_nsd_on"
+            android:title="@string/pref_profile_title_nsd_on"
+            android:summary="@string/pref_profile_summary_nsd_on" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_inet_condition_debounce_up_delay"
+            android:title="@string/pref_profile_title_inet_condition_debounce_up_delay"
+            android:summary="@string/pref_profile_summary_inet_condition_debounce_up_delay" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_inet_condition_debounce_down_delay"
+            android:title="@string/pref_profile_title_inet_condition_debounce_down_delay"
+            android:summary="@string/pref_profile_summary_inet_condition_debounce_down_delay" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_ephemeral_cookie_max_size_bytes"
+            android:title="@string/pref_profile_title_ephemeral_cookie_max_size_bytes"
+            android:summary="@string/pref_profile_summary_ephemeral_cookie_max_size_bytes" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_sync_max_retry_delay_in_seconds"
+            android:title="@string/pref_profile_title_sync_max_retry_delay_in_seconds"
+            android:summary="@string/pref_profile_summary_sync_max_retry_delay_in_seconds" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_connectivity_sampling_interval_in_seconds"
+            android:title="@string/pref_profile_title_connectivity_sampling_interval_in_seconds"
+            android:summary="@string/pref_profile_summary_connectivity_sampling_interval_in_seconds" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_network_access_timeout_ms"
+            android:title="@string/pref_profile_title_network_access_timeout_ms"
+            android:summary="@string/pref_profile_summary_network_access_timeout_ms" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_config_bluetooth">
+        <SwitchPreference
+            android:key="@string/pref_profile_key_ble_scan_always_enabled"
+            android:title="@string/pref_profile_title_ble_scan_always_enabled"
+            android:summary="@string/pref_profile_summary_ble_scan_always_enabled" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_config_location">
+        <EditTextPreference
+            android:key="@string/pref_profile_key_location_background_throttle_interval_ms"
+            android:title="@string/pref_profile_title_location_background_throttle_interval_ms"
+            android:summary="@string/pref_profile_summary_location_background_throttle_interval_ms" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_location_background_throttle_proximity_alert_interval_ms"
+            android:title="@string/pref_profile_title_location_background_throttle_proximity_alert_interval_ms"
+            android:summary="@string/pref_profile_summary_location_background_throttle_proximity_alert_interval_ms" />
+        <SwitchPreference
+            android:key="@string/pref_profile_key_location_global_kill_switch"
+            android:title="@string/pref_profile_title_location_global_kill_switch"
+            android:summary="@string/pref_profile_summary_location_global_kill_switch" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_location_access_check_interval_millis"
+            android:title="@string/pref_profile_title_location_access_check_interval_millis"
+            android:summary="@string/pref_profile_summary_location_access_check_interval_millis" />
+        <EditTextPreference
+            android:key="@string/pref_profile_key_location_access_check_delay_millis"
+            android:title="@string/pref_profile_title_location_access_check_delay_millis"
+            android:summary="@string/pref_profile_title_location_access_check_delay_millis" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_config_radio">
+        <SwitchPreference
+            android:key="@string/pref_profile_key_enable_radio_bug_detection"
+            android:title="@string/pref_profile_title_enable_radio_bug_detection"
+            android:summary="@string/pref_profile_summary_enable_radio_bug_detection" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/category_about">
         <Preference

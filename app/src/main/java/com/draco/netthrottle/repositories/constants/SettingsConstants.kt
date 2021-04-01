@@ -2,6 +2,7 @@ package com.draco.netthrottle.repositories.constants
 
 object SettingsConstants {
     object Global {
+        const val DATA_ACTIVITY_TIMEOUT_WIFI =                      "data_activity_timeout_wifi"
         const val WIFI_BADGING_THRESHOLDS =                         "wifi_badging_thresholds"
         const val WIFI_FRAMEWORK_SCAN_INTERVAL_MS =                 "wifi_framework_scan_interval_ms"
         const val WIFI_IDLE_MS =                                    "wifi_idle_ms"
@@ -14,7 +15,6 @@ object SettingsConstants {
         const val WIFI_BOUNCE_DELAY_OVERRIDE_MS =                   "wifi_bounce_delay_override_ms"
 
         const val DATA_ACTIVITY_TIMEOUT_MOBILE =                    "data_activity_timeout_mobile"
-        const val DATA_ACTIVITY_TIMEOUT_WIFI =                      "data_activity_timeout_wifi"
         const val MDC_INITIAL_MAX_RETRY =                           "mdc_initial_max_retry"
         const val PDP_WATCHDOG_POLL_INTERVAL_MS =                   "pdp_watchdog_poll_interval_ms"
         const val PDP_WATCHDOG_LONG_POLL_INTERVAL_MS =              "pdp_watchdog_long_poll_interval_ms"
@@ -45,7 +45,6 @@ object SettingsConstants {
         const val LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS =        "location_background_throttle_interval_ms"
         const val LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS =    "location_background_throttle_proximity_alert_interval_ms"
         const val LOCATION_GLOBAL_KILL_SWITCH =                     "location_global_kill_switch"
-
 
         const val ENABLE_RADIO_BUG_DETECTION =                      "enable_radio_bug_detection"
     }
