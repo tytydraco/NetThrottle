@@ -2,10 +2,14 @@ package com.draco.netthrottle.fragments
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.ColorFilter
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import androidx.core.graphics.BlendModeColorFilterCompat
+import androidx.core.graphics.BlendModeCompat
 import androidx.preference.EditTextPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -167,10 +171,12 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      * Update the icon beside the setting to alert the user if this is set or not
      */
     private fun updateSettingUnsetTag(setting: EditTextPreference) {
-        if (!setting.text.isNullOrBlank())
-            setting.setIcon(R.drawable.ic_baseline_edit_24)
-        else
-            setting.icon = null
+        setting.icon.colorFilter = if (setting.text.isNullOrBlank())
+            BlendModeColorFilterCompat.createBlendModeColorFilterCompat(
+                Color.GRAY,
+                BlendModeCompat.SRC_ATOP
+            )
+        else null
     }
 
     /**
