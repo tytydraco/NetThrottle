@@ -1,10 +1,13 @@
 package com.draco.netthrottle.fragments
 
-import android.content.*
+import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import androidx.preference.*
+import androidx.preference.EditTextPreference
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 import com.draco.netthrottle.R
 import com.draco.netthrottle.repositories.constants.SettingsConstants
 import com.draco.netthrottle.repositories.constants.SettingsNamespaces
@@ -18,7 +21,7 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     private lateinit var wifiIdleMs: EditTextPreference
     private lateinit var speedLabelCacheEvictionAgeMillis: EditTextPreference
     private lateinit var wifiSupplicantScanIntervalMs: EditTextPreference
-    private lateinit var wifiWatchdogPoorNetworkTestEnabled: SwitchPreference
+    private lateinit var wifiWatchdogPoorNetworkTestEnabled: EditTextPreference
     private lateinit var wifiMaxDHCPRetryCount: EditTextPreference
     private lateinit var wifiEphemeralOutOfRangeTimeoutMs: EditTextPreference
     private lateinit var wifiBounceDelayOverrideMs: EditTextPreference
@@ -34,15 +37,15 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     private lateinit var pdpWatchdogMaxPdpResetFailCount: EditTextPreference
     private lateinit var dataStallAlarmNonAggressiveDelayInMs: EditTextPreference
     private lateinit var dataStallAlarmAggressiveDelayInMs: EditTextPreference
-    private lateinit var dataStallRecoveryOnBadNetwork: SwitchPreference
+    private lateinit var dataStallRecoveryOnBadNetwork: EditTextPreference
     private lateinit var minDurationBetweenRecoverySteps: EditTextPreference
     private lateinit var provisioningApnAlarmDelayInMs: EditTextPreference
     private lateinit var gprsRegisterCheckPeriodMs: EditTextPreference
 
-    private lateinit var netStatsEnabled: SwitchPreference
-    private lateinit var netPolicyQuotaEnabled: SwitchPreference
+    private lateinit var netStatsEnabled: EditTextPreference
+    private lateinit var netPolicyQuotaEnabled: EditTextPreference
     private lateinit var tcpDefaultInitRWND: EditTextPreference
-    private lateinit var nsdOn: SwitchPreference
+    private lateinit var nsdOn: EditTextPreference
     private lateinit var inetConditionDebounceUpDelay: EditTextPreference
     private lateinit var inetConditionDebounceDownDelay: EditTextPreference
     private lateinit var ephemeralCookieMaxSizeBytes: EditTextPreference
@@ -52,11 +55,11 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
 
     private lateinit var locationBackgroundThrottleIntervalMs: EditTextPreference
     private lateinit var locationBackgroundThrottleProximityAlertIntervalMs: EditTextPreference
-    private lateinit var locationGlobalKillSwitch: SwitchPreference
+    private lateinit var locationGlobalKillSwitch: EditTextPreference
     private lateinit var locationAccessCheckIntervalMillis: EditTextPreference
     private lateinit var locationAccessCheckDelayMillis: EditTextPreference
 
-    private lateinit var enableRadioBugDetection: SwitchPreference
+    private lateinit var enableRadioBugDetection: EditTextPreference
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.main, rootKey)
@@ -144,32 +147,24 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
     /**
      * Helper for fetching current setting
      */
-    private fun refreshSettingViaConstant(setting: Any, constant: String, namespace: Int, defaultValue: String) {
+    private fun refreshSettingViaConstant(setting: EditTextPreference, constant: String, namespace: Int) {
         val contentResolver = requireContext().contentResolver
         val constValue = when (namespace) {
             SettingsNamespaces.GLOBAL -> Settings.Global.getString(contentResolver, constant)
             SettingsNamespaces.SYSTEM -> Settings.System.getString(contentResolver, constant)
             SettingsNamespaces.SECURE -> Settings.Secure.getString(contentResolver, constant)
             else -> return
-        } ?: defaultValue
-
-        when (setting) {
-            is SwitchPreference -> setting.isChecked = (constValue != "0")
-            is EditTextPreference -> setting.text = constValue
         }
+
+        setting.text = constValue
     }
 
     /**
      * Helper for applying current setting
      */
-    private fun applySettingViaConstant(setting: Any, constant: String, namespace: Int) {
+    private fun applySettingViaConstant(setting: EditTextPreference, constant: String, namespace: Int) {
         val contentResolver = requireContext().contentResolver
-
-        val constVal = when (setting) {
-            is SwitchPreference -> setting.isChecked.toString()
-            is EditTextPreference -> setting.text
-            else -> null
-        }
+        val constVal = setting.text ?: return
 
         when (namespace) {
             SettingsNamespaces.GLOBAL -> Settings.Global.putString(contentResolver, constant, constVal)
@@ -182,7 +177,51 @@ class MainPreferenceFragment : PreferenceFragmentCompat(), SharedPreferences.OnS
      * Update the UI to show the new constants
      */
     private fun refreshSettings() {
+        refreshSettingViaConstant(dataActivityTimeoutWifi, SettingsConstants.Global.DATA_ACTIVITY_TIMEOUT_WIFI, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiBadgingThresholds, SettingsConstants.Global.WIFI_BADGING_THRESHOLDS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiFrameworkScanIntervalMs, SettingsConstants.Global.WIFI_FRAMEWORK_SCAN_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiIdleMs, SettingsConstants.Global.WIFI_IDLE_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(speedLabelCacheEvictionAgeMillis, SettingsConstants.Global.SPEED_LABEL_CACHE_EVICTION_AGE_MILLIS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiSupplicantScanIntervalMs, SettingsConstants.Global.WIFI_SUPPLICANT_SCAN_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiWatchdogPoorNetworkTestEnabled, SettingsConstants.Global.WIFI_WATCHDOG_POOR_NETWORK_TEST_ENABLED, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiMaxDHCPRetryCount, SettingsConstants.Global.WIFI_MAX_DHCP_RETRY_COUNT, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiEphemeralOutOfRangeTimeoutMs, SettingsConstants.Global.WIFI_EPHEMERAL_OUT_OF_RANGE_TIMEOUT_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiBounceDelayOverrideMs, SettingsConstants.Global.WIFI_BOUNCE_DELAY_OVERRIDE_MS, SettingsNamespaces.GLOBAL)
 
+        refreshSettingViaConstant(dataActivityTimeoutMobile, SettingsConstants.Global.DATA_ACTIVITY_TIMEOUT_MOBILE, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(wifiMobileDataTransitionWakelockTimeoutMs, SettingsConstants.Global.WIFI_MOBILE_DATA_TRANSITION_WAKELOCK_TIMEOUT_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(mdcInitialMaxRetry, SettingsConstants.Global.MDC_INITIAL_MAX_RETRY, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(pdpWatchdogPollIntervalMs, SettingsConstants.Global.PDP_WATCHDOG_POLL_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(pdpWatchdogLongPollIntervalMs, SettingsConstants.Global.PDP_WATCHDOG_LONG_POLL_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(pdpWatchdogErrorPollIntervalMs, SettingsConstants.Global.PDP_WATCHDOG_ERROR_POLL_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(pdpWatchdogTriggerPacketCount, SettingsConstants.Global.PDP_WATCHDOG_TRIGGER_PACKET_COUNT, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(pdpWatchdogErrorPollCount, SettingsConstants.Global.PDP_WATCHDOG_ERROR_POLL_COUNT, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(pdpWatchdogMaxPdpResetFailCount, SettingsConstants.Global.PDP_WATCHDOG_MAX_PDP_RESET_FAIL_COUNT, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(dataStallAlarmNonAggressiveDelayInMs, SettingsConstants.Global.DATA_STALL_ALARM_NON_AGGRESSIVE_DELAY_IN_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(dataStallAlarmAggressiveDelayInMs, SettingsConstants.Global.DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(dataStallRecoveryOnBadNetwork, SettingsConstants.Global.DATA_STALL_RECOVERY_ON_BAD_NETWORK, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(minDurationBetweenRecoverySteps, SettingsConstants.Global.MIN_DURATION_BETWEEN_RECOVERY_STEPS_IN_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(provisioningApnAlarmDelayInMs, SettingsConstants.Global.PROVISIONING_APN_ALARM_DELAY_IN_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(gprsRegisterCheckPeriodMs, SettingsConstants.Global.GPRS_REGISTER_CHECK_PERIOD_MS, SettingsNamespaces.GLOBAL)
+
+        refreshSettingViaConstant(netStatsEnabled, SettingsConstants.Global.NETSTATS_ENABLED, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(netPolicyQuotaEnabled, SettingsConstants.Global.NETPOLICY_QUOTA_ENABLED, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(tcpDefaultInitRWND, SettingsConstants.Global.TCP_DEFAULT_INIT_RWND, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(nsdOn, SettingsConstants.Global.NSD_ON, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(inetConditionDebounceUpDelay, SettingsConstants.Global.INET_CONDITION_DEBOUNCE_UP_DELAY, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(inetConditionDebounceDownDelay, SettingsConstants.Global.INET_CONDITION_DEBOUNCE_DOWN_DELAY, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(ephemeralCookieMaxSizeBytes, SettingsConstants.Global.EPHEMERAL_COOKIE_MAX_SIZE_BYTES, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(syncMaxRetryDelayInSeconds, SettingsConstants.Global.SYNC_MAX_RETRY_DELAY_IN_SECONDS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(connectivitySamplingIntervalInSeconds, SettingsConstants.Global.CONNECTIVITY_SAMPLING_INTERVAL_IN_SECONDS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(networkAccessTimeoutMs, SettingsConstants.Global.NETWORK_ACCESS_TIMEOUT_MS, SettingsNamespaces.GLOBAL)
+
+        refreshSettingViaConstant(locationBackgroundThrottleIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(locationBackgroundThrottleProximityAlertIntervalMs, SettingsConstants.Global.LOCATION_BACKGROUND_THROTTLE_PROXIMITY_ALERT_INTERVAL_MS, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(locationGlobalKillSwitch, SettingsConstants.Global.LOCATION_GLOBAL_KILL_SWITCH, SettingsNamespaces.GLOBAL)
+        refreshSettingViaConstant(locationAccessCheckIntervalMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_INTERVAL_MILLIS, SettingsNamespaces.SECURE)
+        refreshSettingViaConstant(locationAccessCheckDelayMillis, SettingsConstants.Secure.LOCATION_ACCESS_CHECK_DELAY_MILLIS, SettingsNamespaces.SECURE)
+
+        refreshSettingViaConstant(enableRadioBugDetection, SettingsConstants.Global.ENABLE_RADIO_BUG_DETECTION, SettingsNamespaces.GLOBAL)
     }
 
     /**
